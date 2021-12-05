@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: production.Dockerfile
+    env_file:
+      - './frontend/.env.production.local'
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: nginx/production.Dockerfile
+    volumes:
+      - ./nginx/default.production.conf:/etc/nginx/conf.d/nginx.conf
