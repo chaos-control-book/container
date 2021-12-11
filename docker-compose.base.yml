@@ -1,19 +1,23 @@
 version: '3'
 services:
   frontend:
+    container_name: frontend
     volumes:
-      - ./frontend:/usr/src/frontend
-      - /usr/src/frontend/node_modules
-      - /usr/src/frontend/.next
+      - ./frontend:/srv/app
+      - /srv/app/node_modules
+      - /srv/app/.next
     depends_on:
       - backend
 
   backend:
+    container_name: backend
     image: strapi/strapi
     volumes:
       - ./backend:/srv/app
+      - /srv/app/node_modules
 
   nginx:
+    container_name: nginx
     ports:
       - "80:80"
     depends_on:

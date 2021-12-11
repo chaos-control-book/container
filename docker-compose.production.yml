@@ -7,6 +7,11 @@ services:
     env_file:
       - './frontend/.env.production.local'
 
+  backend:
+    environment:
+      - NODE_ENV=production
+    command: 'strapi start'
+
   nginx:
     build:
       context: ./nginx

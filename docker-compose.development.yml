@@ -7,6 +7,10 @@ services:
     env_file:
       - './frontend/.env.development.local'
 
+  backend:
+    environment:
+      - NODE_ENV=development
+
   nginx:
     build:
       context: ./nginx
