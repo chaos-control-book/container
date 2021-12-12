@@ -10,7 +10,7 @@ services:
   backend:
     environment:
       - NODE_ENV=production
-    command: 'strapi start'
+    command: 'yarn build && yarn start'
 
   nginx:
     build:
@@ -18,3 +18,6 @@ services:
       dockerfile: production.Dockerfile
     volumes:
       - ./nginx/default.production.conf:/etc/nginx/conf.d/nginx.conf
+      - /etc/ssl/chaoscontrol.xyz_ca.crt:/etc/ssl/chaoscontrol.xyz_ca.crt
+      - /etc/ssl/chaoscontrol.xyz.crt:/etc/ssl/chaoscontrol.xyz.crt
+      - /etc/ssl/chaoscontrol.xyz.key:/etc/ssl/chaoscontrol.xyz.key
