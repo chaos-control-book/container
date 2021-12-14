@@ -13,8 +13,5 @@ services:
     command: "yarn develop"
 
   nginx:
-    build:
-      context: ./nginx
-      dockerfile: development.Dockerfile
     volumes:
       - ./nginx/default.development.conf:/etc/nginx/conf.d/nginx.conf

@@ -13,9 +13,8 @@ services:
     command: 'yarn build && yarn start'
 
   nginx:
-    build:
-      context: ./nginx
-      dockerfile: production.Dockerfile
+    ports:
+      - "443:443"
     volumes:
       - ./nginx/default.production.conf:/etc/nginx/conf.d/nginx.conf
       - /etc/ssl/chaoscontrol.xyz_ca.crt:/etc/ssl/chaoscontrol.xyz_ca.crt
