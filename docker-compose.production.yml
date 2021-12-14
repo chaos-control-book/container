@@ -1,16 +1,14 @@
-version: '3'
+version: 3
 services:
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: production.Dockerfile
+    image: rushelex/chaos-control-book_frontend:console
     env_file:
-      - './frontend/.env.production.local'
+      - ./frontend/.env.production.local
 
   backend:
+    image: rushelex/chaos-control-book_backend:0.0.0
     environment:
       - NODE_ENV=production
-    command: 'yarn build && yarn start'
 
   nginx:
     ports:

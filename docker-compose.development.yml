@@ -1,16 +1,16 @@
-version: '3'
+version: 3
 services:
   frontend:
     build:
       context: ./frontend
       dockerfile: development.Dockerfile
     env_file:
-      - './frontend/.env.development.local'
+      - ./frontend/.env.development.local
 
   backend:
     environment:
       - NODE_ENV=development
-    command: "yarn develop"
+#    command: yarn develop
 
   nginx:
     volumes:

@@ -1,4 +1,4 @@
-version: '3'
+version: 3
 services:
   frontend:
     container_name: frontend
@@ -6,8 +6,6 @@ services:
       - ./frontend:/srv/app
       - /srv/app/node_modules
       - /srv/app/.next
-    depends_on:
-      - backend
 
   backend:
     container_name: backend
