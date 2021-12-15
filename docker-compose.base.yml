@@ -1,4 +1,4 @@
-version: 3
+version: "3"
 services:
   frontend:
     container_name: frontend
@@ -9,7 +9,6 @@ services:
 
   backend:
     container_name: backend
-    image: strapi/strapi
     volumes:
       - ./backend:/srv/app
       - /srv/app/node_modules
