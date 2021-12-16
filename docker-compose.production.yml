@@ -1,12 +1,12 @@
 version: "3"
 services:
   frontend:
-    image: rushelex/chaos-control-book_frontend:0.0.0
+    image: rushelex/chaos-control-book_frontend:0.0.4
     env_file:
       - ./frontend/.env.production.local
 
   backend:
-    image: rushelex/chaos-control-book_backend:0.0.0
+    image: rushelex/chaos-control-book_backend:0.0.2
 
   nginx:
     ports:
